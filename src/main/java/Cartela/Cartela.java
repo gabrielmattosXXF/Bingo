@@ -81,20 +81,25 @@ public class Cartela {
             {
                 for(int i=0;i<4;i++)
                 {
-                    if(cartela[i][j]>cartela[i+1][j] && cartela[i+1][j]==0)
+                    if(cartela[i][j]>cartela[i+1][j])
                     {
-                        if(cartela[i][j]>cartela[i+2][j])
+                        if(cartela[i+1][j]==0)
+                        {
+                            if(cartela[i][j]>cartela[i+2][j])
+                            {
+                                int aux=cartela[i][j];
+                                cartela[i][j]=cartela[i+2][j];
+                                cartela[i+2][j]=aux;
+                            }
+                        }
+                        else
                         {
                             int aux=cartela[i][j];
-                            cartela[i][j]=cartela[i+2][j];
-                            cartela[i+2][j]=aux;
+                            cartela[i][j]=cartela[i+1][j];
+                            cartela[i+1][j]=aux;
                         }
-                    }
-                    else if(cartela[i][j]>cartela[i+1][j])
-                    {
-                        int aux=cartela[i][j];
-                        cartela[i][j]=cartela[i+1][j];
-                        cartela[i+1][j]=aux;
+                        
+                        
                     }
                 }
             }
@@ -110,7 +115,6 @@ public class Cartela {
         {
             System.out.println(doisDigitos.format(cartela[i][0])+" "+doisDigitos.format(cartela[i][1])+" "+doisDigitos.format(cartela[i][2])+" "+doisDigitos.format(cartela[i][3])+" "+doisDigitos.format(cartela[i][4]));
 
-            //System.out.println("\n");
         }
     }
     
@@ -126,4 +130,18 @@ public class Cartela {
             }
         }
     }
+    
+    /*
+    public static boolean verificaCartelas(Cartela[] vetCartela, int i, int j, int k)
+    {
+        if(vetCartela[k].cartela[i][j]==vetCartela[k+1].cartela[i][j])
+        {
+            return true;
+        }
+        return false;
+    }
+    */
+    
+    
+    
 }

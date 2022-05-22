@@ -7,12 +7,26 @@ package com.mycompany.bingo;
 
 import Cartela.Cartela;
 import java.util.Scanner;
+import java.util.Random;
 import javax.swing.JOptionPane;
 /**
  *
  * @author ice
  */
 public class Bingo {
+    
+    Random random = new Random();
+    private String numerosSorteados = "";
+    private String[] vetNumerosSorteados;
+    private int numSorteado;
+
+    
+    public void Jogo()
+    {
+        numSorteado=(1+random.nextInt(74));
+        numerosSorteados=numerosSorteados+Integer.toString(numSorteado)+" ";
+        vetNumerosSorteados=numerosSorteados.split(" ");
+    }
     
     public static void main(String[] args) {
        
