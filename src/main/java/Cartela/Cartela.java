@@ -21,6 +21,7 @@ public class Cartela {
     private static int numeroCart=0;
     
     private int[][] cartela=new int[5][5];
+    private int numeracao;
     
     NumberFormat tresDigitos = new DecimalFormat("000");
     NumberFormat doisDigitos = new DecimalFormat("00");
@@ -28,12 +29,8 @@ public class Cartela {
     
     public Cartela()
     {
-        
-    }
-    
-    public void criaCartela()
-    {
         numeroCart++;
+        numeracao=numeroCart;
         
         for(int j=0; j<5; j++)
         {
@@ -104,9 +101,9 @@ public class Cartela {
         }
     }
 
-    public void imprimeCartela(int num)
+    public void imprimeCartela()
     {
-        System.out.println("Cartela numero : "+tresDigitos.format(num+1));
+        System.out.println("Cartela numero : "+tresDigitos.format(numeracao));
         System.out.println(" B  I  N  G  O");
         
         for(int i=0;i<5;i++)

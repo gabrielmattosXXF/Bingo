@@ -36,16 +36,16 @@ public class Bingo {
         
         //Cartela[] cart = new Cartela[numJogadores];
         
-        Cartela[] cart = new Cartela[2];
+        Cartela[] cart = new Cartela[numJogadores];
         
         for(int i=0; i<numJogadores; i++)
         {
-            cart[i].criaCartela();
+            cart[i] = new Cartela();
         }
         
         for(int i=0; i<numJogadores; i++)
         {
-            cart[i].imprimeCartela(i+1);
+            cart[i].imprimeCartela();
             System.out.println("");
         }
         
